@@ -15,6 +15,7 @@ const contenedorCitas = document.querySelector('#citas');
 
 // Heading
 const heading = document.querySelector('#administra');
+const avisoCitas = document.querySelector('#avisoCitas');
 
 //Funciones que cargan al iniciar el programa
 window.onload = () => {
@@ -185,9 +186,12 @@ class UI {
     }
     textoHeading(resultado) {
         if(resultado > 0 ) {
-            heading.textContent = `Log de Citas (Edita o remueve)`
+            heading.textContent = `Log de Citas (Edita o remueve)`;
+            avisoCitas.classList.add('block', 'text-center', 'mute');
+            avisoCitas.classList.remove('d-none');
         } else {
             heading.textContent = 'No hay Citas, comienza creando una'
+            avisoCitas.classList.add('d-none');
         }
     }
     limpiarHTML() {
